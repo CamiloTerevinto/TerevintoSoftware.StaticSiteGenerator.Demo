@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32519.379
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CT.Examples.StaticSiteGenerator", "CT.Examples.StaticSiteGenerator\CT.Examples.StaticSiteGenerator.csproj", "{1D9CB47F-D053-40FF-9E1F-9451C66BC8F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D9CB47F-D053-40FF-9E1F-9451C66BC8F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9CB47F-D053-40FF-9E1F-9451C66BC8F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9CB47F-D053-40FF-9E1F-9451C66BC8F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9CB47F-D053-40FF-9E1F-9451C66BC8F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {689D67F5-09E6-4EBE-8132-BC8CD4F2CB9D}
+	EndGlobalSection
+EndGlobal
