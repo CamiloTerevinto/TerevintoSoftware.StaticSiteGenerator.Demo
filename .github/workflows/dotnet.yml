@@ -1,0 +1,36 @@
+name: .NET
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Install the ssg tool
+      run: dotnet tool install terevintosoftware.staticsitegenerator.tool --global
+    - name: Build
+      run: dotnet build
+    - name: Run the ssg tool
+      run: ssg --project ./src/CT.Examples.StaticSiteGenerator/CT.Examples.StaticSiteGenerator --output ./out
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_SA_CREDENTIALS }}
+    - name: Upload output to blob storage
+      uses: azure/CLI@v1
+      with:
+        inlineScript: az storage blob upload-batch --account-name ctssgdemo  --auth-mode key -d '$web' -s ./out
+    - name: Logout from Azure
+      run: az logout
+      if: always()
