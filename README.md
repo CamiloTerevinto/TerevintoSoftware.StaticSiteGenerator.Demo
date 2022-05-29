@@ -1,0 +1,2 @@
+# TerevintoSoftware.StaticSiteGenerator.Demo
+Demo repository for TerevintoSoftware.StaticSiteGenerator
