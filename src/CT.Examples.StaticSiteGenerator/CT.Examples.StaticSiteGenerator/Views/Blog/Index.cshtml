@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Blog";
 }
 
 <div class="text-center">
@@ -8,10 +8,11 @@
     <img src="~/blog-image.jpg" />
 </div>
 
-
-<h3>Post list:</h3>
-<ul>
-    <li>
-        <a asp-controller="Blog" asp-action="Post">Post 1</a>
-    </li>
-</ul>
+<div class="container">
+    <h3>Post list:</h3>
+    <ul>
+        <li>
+            <a asp-controller="Blog" asp-action="MyFirstPost">Post 1</a>
+        </li>
+    </ul>
+</div>

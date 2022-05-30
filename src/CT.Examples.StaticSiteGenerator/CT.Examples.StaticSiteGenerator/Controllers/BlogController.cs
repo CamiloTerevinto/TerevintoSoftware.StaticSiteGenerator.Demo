@@ -9,8 +9,9 @@ public class BlogController : Controller
         return View();
     }
 
-    public IActionResult Post()
+    [Route("/Blog/Posts/MyFirstPost")]
+    public IActionResult MyFirstPost()
     {
-        return View("~/Views/Blog/Posts/Post.cshtml");
+        return View("Views/Blog/Posts/MyFirstPost.cshtml");
     }
 }

@@ -2,7 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section title="header" style="background-color: lightgray">
+    <div class="text-center">
+        <h1 class="display-4">Welcome, I am a static .NET website!</h1>
+    </div>
+</section>
+
+<section title="main" class="container">
+    <div>
+        <h3>Getting started:</h3>
+        <br />
+        <h5><a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator">Find us on GitHub</a> 
+            (or take a look at our <a asp-controller="Blog" asp-action="Index">blog</a>!).</h5>
+    </div>
+</section>
