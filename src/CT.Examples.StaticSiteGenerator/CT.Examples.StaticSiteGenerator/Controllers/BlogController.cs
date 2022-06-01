@@ -14,4 +14,10 @@ public class BlogController : Controller
     {
         return View("Views/Blog/Posts/MyFirstPost.cshtml");
     }
+
+    [Route("/Blog/Posts/MySecondPost")]
+    public IActionResult MySecondPost()
+    {
+        return View("Views/Blog/Posts/MySecondPost.cshtml");
+    }
 }

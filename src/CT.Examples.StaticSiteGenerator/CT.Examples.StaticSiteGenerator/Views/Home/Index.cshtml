@@ -2,17 +2,74 @@
     ViewData["Title"] = "Home Page";
 }
 
-<section title="header" style="background-color: lightgray">
-    <div class="text-center">
-        <h1 class="display-4">Welcome, I am a static .NET website!</h1>
-    </div>
-</section>
+<section title="main" class="row m-0">
+    <div class="col-2" style="background-color:#d3d3d3"></div>
+    <div class="col">
+        <h1 class="display-4 text-center">Welcome, I am a <a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator">static .NET website</a>!</h1>
+        <hr />
 
-<section title="main" class="container">
-    <div>
-        <h3>Getting started:</h3>
-        <br />
-        <h5><a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator">Find us on GitHub</a> 
-            (or take a look at our <a asp-controller="Blog" asp-action="Index">blog</a>!).</h5>
+        <div class="my-4">
+            <h4>1. Introduction</h4>
+            <p>
+                The aim of this web application is to demonstrate the functionalities of the Static Site Generator tool.
+            </p>
+            <p>
+                The Static Site Generator has the goal of allowing <a href="https://asp.net">ASP.NET Core</a> developers to generate static (client-side only) web applications,
+                while allowing them to reuse the concepts and tools they are already familiar with: Partial Views, Tag Helpers, Layouts, and so on.
+            </p>
+            <p>
+                This should facilitate using free/cheap hosting without forcing developers to learn JavaScript SPA frameworks, but also without forcing them to handle
+                individual HTML files which would require them to duplicate a lot of code.
+            </p>
+            <p>
+                <div class="alert alert-success">
+                    The Static Site Generator is free, Open-Source Software, and you can use it for any personal/commercial purposes,
+                    under the conditions of the <a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator/blob/main/LICENSE">MIT license</a>.
+                </div>
+            </p>
+        </div>
+
+        <div class="my-4">
+            <h4>2. Using the Static Site Generator</h4>
+            <p>
+                Using the tool should be quite straightforward for simple scenarios:
+
+                <ol>
+                    <li>
+                        First, you write your application using ASP.NET Core MVC (Razor Pages not currently supported).
+                    </li>
+                    <li>
+                        Then, you install the tool from NuGet: <div>dotnet tool install TerevintoSoftware.StaticSiteGenerator.Tool</div>
+                    </li>
+                    <li>
+                        The tool can then be ran using the ssg command on a CLI (Windows and Linux tested), which will provide on-screen help for the available parameters.
+                    </li>
+                    <li>
+                        Finally, you just need to copy the output of the tool to your hosting provider (in this case of this website, Azure Storage Static Websites!).
+                    </li>
+                </ol>
+            </p>
+        </div>
+
+        <div class="mt-4">
+            <h4>3. Improving the Static Site Generator</h4>
+            <p>
+                This tool is currently supported by a single developer (<a href="https://www.camiloterevinto.com/">hi</a>!), so there are obviously flaws/bugs,
+                things that can be improved, and functionality that could be added.
+            </p>
+            <p>
+                For example, getting URLs correctly generated is
+                <a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator/blob/main/TerevintoSoftware.StaticSiteGenerator/Internal/Services/UrlFormatter.cs">
+                    quite puzzling
+                </a>. If you want to help, you can do so by:
+                <ul>
+                    <li>Helping out with the documentation (code and features).</li>
+                    <li>Adding more unit tests.</li>
+                    <li>Improving this website (<a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator.Demo">I'm on GitHub</a>).</li>
+                    <li>Suggesting features.</li>
+                </ul>
+            </p>
+        </div>
     </div>
+    <div class="col-2" style="background-color:#d3d3d3"></div>
 </section>

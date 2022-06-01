@@ -1,19 +1,19 @@
 ﻿@{
     ViewData["Title"] = "My First post";
-    ViewData["PostDate"] = new DateTime(2022, 05, 31);
+    ViewData["PostDate"] = new DateTime(2022, 06, 01);
     ViewData["Author"] = "CT";
-    ViewData["PreviousPost"] = null;
-    ViewData["NextPost"] = "MySecondPost";
+    ViewData["PreviousPost"] = "MyFirstPost";
+    ViewData["NextPost"] = null;
 }
 
 <div class="text-center">
-    <h2>This is my very first blog post!</h2>
+    <h2>This is my second blog post!</h2>
 
     <br />
     <p>
         This entry is used to demonstrate that the
         <a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator">Static Site Generator</a> tool
-        supports even inner folders (Blog => Posts => MyFirstPost.cshtml)!
+        can also support passing data to Partial Views!
     </p>
 
     <partial name="_PostStatsPartial.cshtml" />
