@@ -30,7 +30,7 @@ jobs:
     - name: Upload output to blob storage
       uses: azure/CLI@v1
       with:
-        inlineScript: az storage blob upload-batch --account-name ctssgdemo  --auth-mode key -d '$web' -s ./out
+        inlineScript: az storage blob upload-batch --account-name ctssgdemo  --auth-mode key -d '$web' -s ./out --overwrite true
     - name: Logout from Azure
       run: az logout
       if: always()
