@@ -12,12 +12,12 @@ public class BlogController : Controller
     [Route("/Blog/Posts/MyFirstPost")]
     public IActionResult MyFirstPost()
     {
-        return View("Views/Blog/Posts/MyFirstPost.cshtml");
+        return View();
     }
 
     [Route("/Blog/Posts/MySecondPost")]
     public IActionResult MySecondPost()
     {
-        return View("Views/Blog/Posts/MySecondPost.cshtml");
+        return View();
     }
 }

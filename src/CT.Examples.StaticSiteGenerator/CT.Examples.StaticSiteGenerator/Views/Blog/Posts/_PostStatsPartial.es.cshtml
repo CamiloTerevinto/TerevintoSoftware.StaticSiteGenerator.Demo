@@ -1,0 +1,35 @@
+﻿@{
+    var postDate = (DateTime)ViewData["PostDate"]!;
+    var author = (string)ViewData["Author"]!;
+    var previousPost = (string?)ViewData["PreviousPost"];
+    var nextPost = (string?)ViewData["NextPost"];
+}
+
+<div>
+    <b>Hola, ¡soy una vista parcial (Partial View)!</b>
+    <div>
+        <strong>Fecha del artículo:</strong> @postDate.ToShortDateString() | <strong>Autor: </strong>@author
+        <br />
+        
+        @if (nextPost != null)
+        {
+            <a asp-controller="Blog" asp-action="@nextPost">Siguiente artículo</a>
+        }
+        else
+        {
+            <text>Siguiente artículo</text>
+        }
+        |
+        @if (previousPost != null)
+        {
+            <a asp-controller="Blog" asp-action="@previousPost">Artículo anterior</a>
+        }
+        else
+        {
+            <text>Artículo anterior</text>
+        }
+        
+        <br />
+        <a asp-controller="Blog" asp-action="Index">Volver al índice del blog</a>
+    </div>
+</div>

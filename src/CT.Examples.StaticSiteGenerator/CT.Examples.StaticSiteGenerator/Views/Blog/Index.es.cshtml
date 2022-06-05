@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Blog";
+}
+
+<div style="background: url(/blog-image.jpg) no-repeat center; height: 200px; background-size: cover;">
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">¡Bienvenido/a!</h1>
+    <h2>This is a detailed blog page, with multiple blog posts!</h2>
+</div>
+
+<div class="container">
+    <h3>Post list:</h3>
+    <ul>
+        <li>
+            <a asp-controller="Blog" asp-action="MySecondPost">Second post</a>
+        </li>
+        <li>
+            <a asp-controller="Blog" asp-action="MyFirstPost">First post</a>
+        </li>
+    </ul>
+</div>
