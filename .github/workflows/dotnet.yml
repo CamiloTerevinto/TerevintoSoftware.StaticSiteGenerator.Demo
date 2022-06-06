@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build ./src/CT.Examples.StaticSiteGenerator
     - name: Run the ssg tool
-      run: ssg --project ./src/CT.Examples.StaticSiteGenerator/CT.Examples.StaticSiteGenerator --output ./out
+      run: ssg --project ./src/CT.Examples.StaticSiteGenerator/CT.Examples.StaticSiteGenerator --output ./out --route-casing KebabCase --use-localization true
     - name: Login to Azure
       uses: azure/login@v1
       with:
