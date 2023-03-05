@@ -3,14 +3,10 @@ name: .NET
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -20,17 +16,16 @@ jobs:
     - name: Install the ssg tool
       run: dotnet tool install terevintosoftware.staticsitegenerator.tool --global
     - name: Build
-      run: dotnet build ./src/CT.Examples.StaticSiteGenerator
+      run: dotnet build -c Release
+
     - name: Run the ssg tool
-      run: ssg --project ./src/CT.Examples.StaticSiteGenerator/CT.Examples.StaticSiteGenerator --output ./out --route-casing KebabCase --use-localization true
-    - name: Login to Azure
-      uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_SA_CREDENTIALS }}
-    - name: Upload output to blob storage
-      uses: azure/CLI@v1
-      with:
-        inlineScript: az storage blob upload-batch --account-name ctssgdemo  --auth-mode key -d '$web' -s ./out --overwrite true
-    - name: Logout from Azure
-      run: az logout
-      if: always()
+      run: ssg --project ${GITHUB_WORKSPACE}/src/TerevintoSoftware.StaticSiteGenerator.Demo --output ${GITHUB_WORKSPACE}/out --route-casing KebabCase --use-localization true --assembly bin/Release/net6.0/TerevintoSoftware.StaticSiteGenerator.Demo.dll
+
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v3
+
+    - name: Install the Netlify CLI
+      run: npm install netlify-cli -g
+
+    - name: Push to Netlify
+      run: cd ./out && netlify deploy --dir . --site staticsitegenerator  --prod --auth ${{secrets.NETLIFY_TOKEN}}

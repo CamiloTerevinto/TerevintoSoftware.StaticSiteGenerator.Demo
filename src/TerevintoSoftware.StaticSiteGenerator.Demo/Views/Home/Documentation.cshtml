@@ -1,0 +1,152 @@
+﻿<section class="usage bg-light flex-column flex-sm-row flex-md-row">
+    Coming soon...
+</section>
+
+@*<section class="usage bg-light flex-column flex-sm-row flex-md-row">
+    <div class="usage-element col-12 col-sm-6 col-md-3">
+        <i class="bi-1-circle usage-element-icon"></i>
+        <p class="usage-element-text">Write your application using ASP.NET Core (.NET 6+).</p>
+    </div>
+    <div class="usage-element col-12 col-sm-6 col-md-3">
+        <i class="bi-2-circle usage-element-icon"></i>
+        <p class="usage-element-text">Install the <a href="https://www.nuget.org/packages/TerevintoSoftware.StaticSiteGenerator.Tool">ssg .NET global tool</a>.</p>
+    </div>
+    <div class="usage-element col-12 col-sm-6 col-md-3">
+        <i class="bi-3-circle usage-element-icon"></i>
+        <p class="usage-element-text">Run the ssg command on your CLI of choice.</p>
+    </div>
+    <div class="usage-element col-12 col-sm-6 col-md-3">
+        <i class="bi-4-circle usage-element-icon"></i>
+        <p class="usage-element-text">Upload the generated output to your hosting provider.</p>
+    </div>
+</section>
+
+<section title="main" class="row m-0">
+    <div class="col-2" style="background-color:#d3d3d3"></div>
+    <div class="col mx-4">
+        <h1 class="display-4 text-center">Welcome, I am a <a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator">static .NET website</a>!</h1>
+        <hr />
+
+        <div class="my-4">
+            <h4>1. Introduction</h4>
+            <p>
+                The aim of this web application is to demonstrate the functionalities of the Static Site Generator tool.
+            </p>
+            <p>
+                The Static Site Generator has the goal of allowing <a href="https://asp.net">ASP.NET Core</a> developers to generate static (client-side only) web applications,
+                while allowing them to reuse the concepts and tools they are already familiar with: Partial Views, Tag Helpers, Layouts, and so on.
+            </p>
+            <p>
+                This should facilitate using free/cheap hosting without forcing developers to learn JavaScript SPA frameworks, but also without forcing them to handle
+                individual HTML files which would require them to duplicate a lot of code.
+            </p>
+            <p>
+                <div class="alert alert-success">
+                    The Static Site Generator is free, Open-Source Software, and you can use it for any personal/commercial purposes,
+                    under the conditions of the <a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator/blob/main/LICENSE">MIT license</a>.
+                </div>
+            </p>
+        </div>
+
+        <div class="my-4">
+            <h4>2. Using the Static Site Generator</h4>
+            <p>
+                Using the tool should be quite straightforward for simple scenarios:
+
+                <ol>
+                    <li>
+                        First, you write your application using ASP.NET Core MVC (Razor Pages not currently supported).
+                    </li>
+                    <li>
+                        Then, you install the tool from NuGet: <div>dotnet tool install TerevintoSoftware.StaticSiteGenerator.Tool</div>
+                    </li>
+                    <li>
+                        The tool can then be ran using the ssg command on a CLI (Windows and Linux tested), which will provide on-screen help for the available parameters.
+                    </li>
+                    <li>
+                        Finally, you just need to copy the output of the tool to your hosting provider (in this case of this website, Azure Storage Static Websites!).
+                    </li>
+                </ol>
+            </p>
+        </div>
+
+        <div class="my-4">
+            <h4>3. Use cases / hosting options</h4>
+            <p>
+                The tool can be used in a number of different scenarios, although its main purpose is to facilitate free or extremely cheap hosting options.
+            </p>
+
+            <div class="px-4 my-3">
+                <h5>1. For static websites</h5>
+                <p>
+                    For small applications, like a static blog, a resume page, a company site, and so on.
+                    The output of the tool can be server for free or very cheaply in several hosting options, like Azure Static Websites,
+                    Azure Blob Storage, AWS S3, Google Firebase, Netlify, etc.
+                </p>
+            </div>
+
+            <div class="px-4 my-3">
+                <h5>2. For static websites with some dynamic functionality</h5>
+                <p>
+                    If you want to have a mainly static website with only some dynamic functionality, like a contact form for example, my recommendation would be
+                    to have the frontend be static, and then use a free or cheap serverless backend. For example:
+                </p>
+
+                <img src="~/Architecture options.jpg" alt="An image that shows different hosting options using AWS, Azure and Firebase." class="mb-4" />
+
+
+                <div class="alert alert-warning">
+                    <strong>Notice:</strong> We are not affiliated with any of these providers nor endorse any of these options in particular.
+                    These are just examples based on public information as of June 2022.
+                </div>
+            </div>
+
+            <div class="px-4 my-3">
+                <h5>3. For dynamic websites</h5>
+                <p>
+                    For mainly dynamic websites, such as web applications (stores, blogs with comments, etc.), this tool could be used in 2 ways:
+                </p>
+                <p>
+                    On one hand, you could first start with a static website using this tool, while the dynamic parts of the website are created,
+                    so as to avoid costs during development. This would allow you to continue using ASP.NET Core MVC without doing anything special!
+                </p>
+                <p>
+                    On the other hand, you could split the application into backend and frontend, and use client-side technologies (like vanilla JavaScript)
+                    for the dynamic parts, such as calling the HTTP APIs. This would allow you to remove load from the server as the client can be hosted statically.
+                </p>
+            </div>
+
+            <p>
+                Depending on current and future needs, however, you may want to consider other frameworks too.
+                For c#, that would mean looking at <a href="https://docs.microsoft.com/en-us/aspnet/core/blazor">Blazor</a>, for example.
+            </p>
+        </div>
+
+        <div class="mt-4">
+            <h4>4. Improving the Static Site Generator</h4>
+            <p>
+                This tool is currently supported by a single developer (<a href="https://www.camiloterevinto.com/">hi</a>!), so there are obviously flaws/bugs,
+                things that can be improved, and functionality that could be added.
+            </p>
+            <p>
+                For example, getting URLs correctly generated is
+                <a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator/blob/main/TerevintoSoftware.StaticSiteGenerator/Services/UrlFormatter.cs">
+                    quite puzzling
+                </a>. If you want to help, you can do so by:
+                <ol class="list-group list-group-flush list-group-numbered" style="width: fit-content">
+                    <li class="list-group-item">Helping out with the documentation (code and features).</li>
+                    <li class="list-group-item">Adding more unit tests.</li>
+                    <li class="list-group-item">Improving this website (<a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator.Demo">I'm on GitHub</a>).</li>
+                    <li class="list-group-item">Suggesting features.</li>
+                </ol>
+            </p>
+
+            <h5>4.1. Known limitations</h5>
+            <p>
+                Currently, this tool does not provide support for: Models (when passed into Views), Areas, localization, and possibly other MVC client-side functionality.
+                This also doesn't support Razor Pages, although it should be possible to support it if help is provided.
+            </p>
+        </div>
+    </div>
+    <div class="col-2" style="background-color:#d3d3d3"></div>
+</section>*@

@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/*!
+* Start Bootstrap - Landing Page v6.0.5 (https://startbootstrap.com/theme/landing-page)
+* Copyright 2013-2022 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-landing-page/blob/master/LICENSE)
+*/
+
+.features-icons {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+    .features-icons .features-icons-item {
+        max-width: 20rem;
+    }
+
+        .features-icons .features-icons-item .features-icons-icon {
+            height: 6rem;
+        }
+
+            .features-icons .features-icons-item .features-icons-icon i {
+                font-size: 4.5rem;
+            }
+
+header.masthead {
+    position: relative;
+    background-color: #343a40;
+    background: url("/assets/bg-masthead.jpg") no-repeat center center;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+    header.masthead:before {
+        content: "";
+        position: absolute;
+        background-color: #1c375e;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+    }
+
+    header.masthead h1, header.masthead .h1 {
+        font-size: 2rem;
+    }
+
+@media (min-width: 768px) {
+    header.masthead {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+        header.masthead h1, header.masthead .h1 {
+            font-size: 4rem;
+        }
+}
+
+.showcase .showcase-text {
+    padding: 0 3rem;
+}
+
+.showcase .showcase-img {
+    min-height: 21rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.call-to-action {
+    position: relative;
+    background-color: #343a40;
+    background: url("/assets/bg-masthead.jpg") no-repeat center center;
+    background-size: cover;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+    .call-to-action:before {
+        content: "";
+        position: absolute;
+        background-color: #1c375e;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.5;
+    }
+
+footer.footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.usage {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.usage-element {
+    display: flex;
+    flex-direction: column;
+    max-width: 225px;
+}
+
+@media (max-width: 767px) {
+    .usage-element {
+        align-self: center;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .features-icons {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .masthead {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+
+.usage-element-icon {
+    font-size: 10rem;
+    text-align: center;
+}
