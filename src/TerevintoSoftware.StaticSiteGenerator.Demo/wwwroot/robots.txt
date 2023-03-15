@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Optimization for Google Ads Bot
+User-agent: AdsBot-Google-Mobile
+User-agent: AdsBot-Google
+
+# Block PetalBot
+User-agent: PetalBot
+Disallow: /
+
+Sitemap: https://www.staticsitegenerator.net/sitemap.xml
