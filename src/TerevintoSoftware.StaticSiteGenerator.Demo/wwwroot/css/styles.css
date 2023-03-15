@@ -127,3 +127,29 @@ footer.footer {
     font-size: 10rem;
     text-align: center;
 }
+
+.documentation-wrapper__menu a:hover {
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+}
+
+.documentation-wrapper__menu a {
+    font-size: 1.25rem;
+}
+
+    .documentation-wrapper__menu a::before {
+        content: "> ";
+    }
+
+.documentation_content-title {
+    margin-left: 0.5rem;
+}
+
+.documentation_content-text {
+    margin-left: 1rem;
+    max-width: 1000px;
+}
+
+.fit-width {
+    width: fit-content;
+}

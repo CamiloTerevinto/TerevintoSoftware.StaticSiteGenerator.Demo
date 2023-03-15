@@ -1,152 +1,146 @@
-﻿<section class="usage bg-light flex-column flex-sm-row flex-md-row">
-    Coming soon...
-</section>
+﻿<div class="d-flex h-100 documentation-wrapper">
+    <nav class="align-content-start bg-primary flex-fill h-100 navbar ps-3 pe-5 text-nowrap documentation-wrapper__menu" style="max-width: 250px">
+        <ul class="navbar-nav w-100">
+            <li class="nav-item"><a href="#get-started" class="nav-link text-white">Get started</a></li>
+            <li class="nav-item"><a href="#installation" class="nav-link text-white">Installation</a></li>
+            <li class="nav-item"><a href="#features" class="nav-link text-white">Features</a></li>
+            <li class="nav-item"><a href="#cli" class="nav-link text-white">Command Line</a></li>
+            <li class="nav-item"><a href="#limitations" class="nav-link text-white">Limitations</a></li>
+            <li class="nav-item"><a href="#improving-ssg" class="nav-link text-white">Improving SSG.NET</a></li>
+        </ul>
+    </nav>
+    <section title="main" class="flex-fill w-100">
+        <div class="bg-light pb-2 mb-2">
+            <h2 class="pb-1 documentation_content-title" id="get-started">Get started</h2>
+            <div class="documentation_content-text">
+                <p>
+                    SSG.NET has the goal of allowing <a href="https://asp.net/mvc" target="_blank">ASP.NET Core MVC <i class="bi-box-arrow-up-right"></i></a> developers to
+                    generate static (client-side only) web applications, while allowing them to reuse the concepts and tools
+                    they are already familiar with: Partial Views, Tag Helpers, Layouts, and so on.
+                </p>
+                <p>
+                    This should facilitate using free/cheap hosting without forcing developers to learn JavaScript SPA frameworks,
+                    but also without forcing them to handle individual HTML files which would require them to duplicate a lot of code.
+                </p>
+                <p>
+                    Using SSG.NET is as simple as developing your ASP.NET Core MVC website (while keeping in mind the restrictions mentioned below),
+                    followed by running the SSG through the console, either manually or in some automated pipeline.
+                </p>
+                <p>
+                    SSG.NET works by running your application's Views directly through ASP.NET Core internals in a process similar (but greatly simplified)
+                    to what happens when you run your application.
+                </p>
+                <p>
+                    SSG.NET is free, Open-Source Software, and you can use it for any personal/commercial purposes, under the conditions of the
+                    <a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator/blob/main/LICENSE" target="_blank">MIT license <i class="bi-box-arrow-up-right"></i></a>.
+                </p>
+            </div>
+        </div>
+        <div class="bg-white pb-2 mb-2">
+            <h2 class="pb-1 documentation_content-title" id="installation">Installation</h2>
+            <div class="documentation_content-text">
+                Installing SSG.NET can be done via the dotnet tool CLI:
+                <br />
+                <br />
 
-@*<section class="usage bg-light flex-column flex-sm-row flex-md-row">
-    <div class="usage-element col-12 col-sm-6 col-md-3">
-        <i class="bi-1-circle usage-element-icon"></i>
-        <p class="usage-element-text">Write your application using ASP.NET Core (.NET 6+).</p>
-    </div>
-    <div class="usage-element col-12 col-sm-6 col-md-3">
-        <i class="bi-2-circle usage-element-icon"></i>
-        <p class="usage-element-text">Install the <a href="https://www.nuget.org/packages/TerevintoSoftware.StaticSiteGenerator.Tool">ssg .NET global tool</a>.</p>
-    </div>
-    <div class="usage-element col-12 col-sm-6 col-md-3">
-        <i class="bi-3-circle usage-element-icon"></i>
-        <p class="usage-element-text">Run the ssg command on your CLI of choice.</p>
-    </div>
-    <div class="usage-element col-12 col-sm-6 col-md-3">
-        <i class="bi-4-circle usage-element-icon"></i>
-        <p class="usage-element-text">Upload the generated output to your hosting provider.</p>
-    </div>
-</section>
+                <div class="bg-black px-2 text-white fit-width">dotnet tool install --global TerevintoSoftware.StaticSiteGenerator.Tool</div>
+            </div>
+        </div>
+        <div class="bg-light pb-2 mb-2">
+            <h2 class="pb-1 documentation_content-title" id="features">Features</h2>
+            <div class="documentation_content-text">
+                <h5>1. Route casing</h5>
+                <p>SSG.NET supports 3 route casing strategies: kebab casing the URLs, lower casing the URLs, and keeping the original route.</p>
+                <p>
+                    With kebab casing, SSG.NET will transform URLs such as <i>/Blog/SomeLongName</i> into
+                    <i>/blog/some-long-name</i> and will accomodate numbers based on the original case: <i>Abc2A => abc2-a; A2bc => a2bc; 2Abc => 2-abc</i>; etc.
+                </p>
 
-<section title="main" class="row m-0">
-    <div class="col-2" style="background-color:#d3d3d3"></div>
-    <div class="col mx-4">
-        <h1 class="display-4 text-center">Welcome, I am a <a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator">static .NET website</a>!</h1>
-        <hr />
+                <br />
 
-        <div class="my-4">
-            <h4>1. Introduction</h4>
-            <p>
-                The aim of this web application is to demonstrate the functionalities of the Static Site Generator tool.
-            </p>
-            <p>
-                The Static Site Generator has the goal of allowing <a href="https://asp.net">ASP.NET Core</a> developers to generate static (client-side only) web applications,
-                while allowing them to reuse the concepts and tools they are already familiar with: Partial Views, Tag Helpers, Layouts, and so on.
-            </p>
-            <p>
-                This should facilitate using free/cheap hosting without forcing developers to learn JavaScript SPA frameworks, but also without forcing them to handle
-                individual HTML files which would require them to duplicate a lot of code.
-            </p>
-            <p>
-                <div class="alert alert-success">
-                    The Static Site Generator is free, Open-Source Software, and you can use it for any personal/commercial purposes,
-                    under the conditions of the <a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator/blob/main/LICENSE">MIT license</a>.
+                <h5>2. Localization</h5>
+                <p>
+                    Localization is known to work (and officially supported) through view file localization, in other words:
+                    Index.cshtml, Index.es.cshtml, and Index.fr.cshtml would generate 3 different HTML files.
+                </p>
+                <p>Other types of localization, such as through the @@Microsoft.AspNetCore.Mvc.Localization.I*Localizer classes may or may not work, and need testing.</p>
+
+                <br />
+
+                <h5>3. Blog template</h5>
+                <p>
+                    While not a part of SSG.NET per se, we provide a fully functional blog template ready to be consumed as a
+                    <a href="https://github.com/CamiloTerevinto/StaticBlogTemplate" target="_blank">GitHub template repository <i class="bi-box-arrow-up-right"></i></a>.
+                    This application supports:
+
+                    <ul>
+                        <li>MarkDown support</li>
+                        <li>Automatic RSS and SiteMap creation</li>
+                        <li>Post management</li>
+                        <li>SEO and social media meta tags</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <div class="bg-white pb-2 mb-2">
+            <h2 class="pb-1 documentation_content-title" id="cli">Command Line</h2>
+            <div class="documentation_content-text">
+                The following options are supported by SSG.NET:
+
+                <ul class="list-group mb-3 fit-width">
+                    <li class="list-group-item"><b>--project: </b>the path to the folder that contains the project to generate the static site for.</li>
+                    <li class="list-group-item"><b>--output: </b>the path to the output directory (write permissions needed).</li>
+                    <li class="list-group-item">
+                        <b>--assembly: </b>the relative path to the assembly to use for the project. Defaults to /bin/Debug/net6.0/{projectName}.dll.
+                        <br /> If given, the value must be a relative path to the project directory and point to the compiled .dll.
+                    </li>
+                    <li class="list-group-item"><b>--base-controller: </b>the name of the base controller to use for the project.</li>
+                    <li class="list-group-item"><b>--route-template: </b> the default route template to use for the project.</li>
+                    <li class="list-group-item"><b>--route-casing: </b>the casing convention to use for routes.</li>
+                    <li class="list-group-item"><b>--default-culture: </b>the default culture to use for the project.</li>
+                    <li class="list-group-item"><b>--use-localization: </b>whether to enable localization for the project.</li>
+                    <li class="list-group-item"><b>--clear-output: </b>whether to delete the output folder, if it exists.</li>
+                    <li class="list-group-item"><b>--verbose: </b>enables verbose logging.</li>
+                    <li class="list-group-item"><b>--version: </b>shows the version of the package installed.</li>
+                </ul>
+
+                <h5>Sample usage</h5>
+                <p>This site is built using SSG.NET and is built through a GitHub Action, using the following options, and published (for free!) 
+                    to <a href="https://www.netlify.com" target="_blank">Netlify <i class="bi-box-arrow-up-right"></i></a>:
+                </p>
+                <div class="bg-black px-2 text-white fit-width">
+                    ssg --project ${GITHUB_WORKSPACE}/src/TerevintoSoftware.StaticSiteGenerator.Demo --output ${GITHUB_WORKSPACE}/out <br />
+                    --route-casing KebabCase --use-localization true --assembly bin/Release/net6.0/TerevintoSoftware.StaticSiteGenerator.Demo.dll
                 </div>
-            </p>
+            </div>
+        </div>
+        <div class="bg-light pb-2">
+            <h2 class="pb-1 documentation_content-title" id="limitations">Limitations</h2>
+            <div class="documentation_content-text">
+                Tests have so far proven that the following work: 
+
+                <ul>
+                    <li>Views</li>
+                    <li>Partial views/Tag helpers</li>
+                    <li>File suffix-based localization</li>
+                </ul>
+                
+                Controllers/Models/Middleware/etc are, obviously, unsupported as this the code is transformed into HTML. 
+                Areas and View Components might work but have not been tested. 
+                Razor Pages are unsupported but support could be provided if help is given. 
+            </div>
         </div>
 
-        <div class="my-4">
-            <h4>2. Using the Static Site Generator</h4>
-            <p>
-                Using the tool should be quite straightforward for simple scenarios:
-
-                <ol>
-                    <li>
-                        First, you write your application using ASP.NET Core MVC (Razor Pages not currently supported).
-                    </li>
-                    <li>
-                        Then, you install the tool from NuGet: <div>dotnet tool install TerevintoSoftware.StaticSiteGenerator.Tool</div>
-                    </li>
-                    <li>
-                        The tool can then be ran using the ssg command on a CLI (Windows and Linux tested), which will provide on-screen help for the available parameters.
-                    </li>
-                    <li>
-                        Finally, you just need to copy the output of the tool to your hosting provider (in this case of this website, Azure Storage Static Websites!).
-                    </li>
+        <div class="bg-white pb-2 mb-2">
+            <h2 class="pb-1 documentation_content-title" id="improving-ssg">Improving SSG.NET</h2>
+            <div class="documentation_content-text">
+                If you want to help, you can do so by:
+                <ol class="list-group list-group-flush list-group-numbered fit-width">
+                    <li class="list-group-item">Helping out with this site, such as improving design or adding more translations.</li>
+                    <li class="list-group-item">Adding more unit/integration tests.</li>
+                    <li class="list-group-item">Proposing features/bug fixes/etc.</li>
                 </ol>
-            </p>
-        </div>
-
-        <div class="my-4">
-            <h4>3. Use cases / hosting options</h4>
-            <p>
-                The tool can be used in a number of different scenarios, although its main purpose is to facilitate free or extremely cheap hosting options.
-            </p>
-
-            <div class="px-4 my-3">
-                <h5>1. For static websites</h5>
-                <p>
-                    For small applications, like a static blog, a resume page, a company site, and so on.
-                    The output of the tool can be server for free or very cheaply in several hosting options, like Azure Static Websites,
-                    Azure Blob Storage, AWS S3, Google Firebase, Netlify, etc.
-                </p>
             </div>
-
-            <div class="px-4 my-3">
-                <h5>2. For static websites with some dynamic functionality</h5>
-                <p>
-                    If you want to have a mainly static website with only some dynamic functionality, like a contact form for example, my recommendation would be
-                    to have the frontend be static, and then use a free or cheap serverless backend. For example:
-                </p>
-
-                <img src="~/Architecture options.jpg" alt="An image that shows different hosting options using AWS, Azure and Firebase." class="mb-4" />
-
-
-                <div class="alert alert-warning">
-                    <strong>Notice:</strong> We are not affiliated with any of these providers nor endorse any of these options in particular.
-                    These are just examples based on public information as of June 2022.
-                </div>
-            </div>
-
-            <div class="px-4 my-3">
-                <h5>3. For dynamic websites</h5>
-                <p>
-                    For mainly dynamic websites, such as web applications (stores, blogs with comments, etc.), this tool could be used in 2 ways:
-                </p>
-                <p>
-                    On one hand, you could first start with a static website using this tool, while the dynamic parts of the website are created,
-                    so as to avoid costs during development. This would allow you to continue using ASP.NET Core MVC without doing anything special!
-                </p>
-                <p>
-                    On the other hand, you could split the application into backend and frontend, and use client-side technologies (like vanilla JavaScript)
-                    for the dynamic parts, such as calling the HTTP APIs. This would allow you to remove load from the server as the client can be hosted statically.
-                </p>
-            </div>
-
-            <p>
-                Depending on current and future needs, however, you may want to consider other frameworks too.
-                For c#, that would mean looking at <a href="https://docs.microsoft.com/en-us/aspnet/core/blazor">Blazor</a>, for example.
-            </p>
         </div>
-
-        <div class="mt-4">
-            <h4>4. Improving the Static Site Generator</h4>
-            <p>
-                This tool is currently supported by a single developer (<a href="https://www.camiloterevinto.com/">hi</a>!), so there are obviously flaws/bugs,
-                things that can be improved, and functionality that could be added.
-            </p>
-            <p>
-                For example, getting URLs correctly generated is
-                <a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator/blob/main/TerevintoSoftware.StaticSiteGenerator/Services/UrlFormatter.cs">
-                    quite puzzling
-                </a>. If you want to help, you can do so by:
-                <ol class="list-group list-group-flush list-group-numbered" style="width: fit-content">
-                    <li class="list-group-item">Helping out with the documentation (code and features).</li>
-                    <li class="list-group-item">Adding more unit tests.</li>
-                    <li class="list-group-item">Improving this website (<a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator.Demo">I'm on GitHub</a>).</li>
-                    <li class="list-group-item">Suggesting features.</li>
-                </ol>
-            </p>
-
-            <h5>4.1. Known limitations</h5>
-            <p>
-                Currently, this tool does not provide support for: Models (when passed into Views), Areas, localization, and possibly other MVC client-side functionality.
-                This also doesn't support Razor Pages, although it should be possible to support it if help is provided.
-            </p>
-        </div>
-    </div>
-    <div class="col-2" style="background-color:#d3d3d3"></div>
-</section>*@
+    </section>
+</div>

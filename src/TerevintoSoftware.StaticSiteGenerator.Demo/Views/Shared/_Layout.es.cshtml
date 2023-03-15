@@ -9,17 +9,20 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
+<body class="h-100 d-flex flex-column">
+    <header style="flex: 0 0 59px">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow" id="main-menu">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Static Site Generator</a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">SSG.NET</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1 justify-content-end">
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="Index" class="nav-link text-dark">Inicio</a>
+                        </li>
                         <li class="nav-item">
                             <a asp-controller="Home" asp-action="Documentation" class="nav-link text-dark">Documentación</a>
                         </li>
@@ -31,22 +34,21 @@
             </div>
         </nav>
     </header>
-    <div>
-        <main role="main">
-            @RenderBody()
-        </main>
+    <div class="flex-fill">
+        @RenderBody()
     </div>
 
-    <footer class="footer bg-dark">
+    <footer class="footer bg-dark" style="flex: 0 0 calc(24px + 2rem)">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 h-100 text-center text-lg-start my-auto text-white ">
-                    <ul class="list-inline mb-2">
-                        <li class="list-inline-item"><a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator" class="text-white">GitHub</a></li>
+                <div class="text-center text-white">
+                    <ul class="list-inline my-0">
+                        <li class="list-inline-item"><a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator" target="_blank" class="text-white">GitHub</a> <i class="bi-box-arrow-up-right"></i></li>
                         <li class="list-inline-item">⋅</li>
-                        <li class="list-inline-item">Creado por <a href="https://www.camiloterevinto.com" class="text-white">Camilo Terevinto </a></li>
+                        <li class="list-inline-item"><a href="https://www.nuget.org/packages/TerevintoSoftware.StaticSiteGenerator.Tool/" target="_blank" class="text-white">NuGet</a> <i class="bi-box-arrow-up-right"></i></li>
+                        <li class="list-inline-item">⋅</li>
+                        <li class="list-inline-item"><a href="https://github.com/CamiloTerevinto/TerevintoSoftware.StaticSiteGenerator.Demo" target="_blank" class="text-white">Mejora este sitio</a> <i class="bi-box-arrow-up-right"></i></li>
                     </ul>
-                    <p class="text-white small mb-4 mb-lg-0">&copy; Camilo Terevinto 2022-2023. Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>

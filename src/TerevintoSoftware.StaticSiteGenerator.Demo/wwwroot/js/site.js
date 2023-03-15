@@ -12,8 +12,8 @@
 
             window.location.href = window.location.href.replace(currentUrl, enUrl);
         }
-        else if (currentUrl === "/index.html") {
-            window.location.href = window.location.href.replace("/index.html", "/es/index.html");
+        else if (currentUrl === "/") {
+            window.location.href = window.location.href + "es/index";
         }
     });
 })
