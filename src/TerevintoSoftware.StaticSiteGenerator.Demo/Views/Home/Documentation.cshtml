@@ -94,11 +94,11 @@
                 The following options are supported by SSG.NET:
 
                 <ul class="list-group mb-3 fit-width">
-                    <li class="list-group-item"><b>--project: </b>the path to the folder that contains the project to generate the static site for.</li>
-                    <li class="list-group-item"><b>--output: </b>the path to the output directory (write permissions needed).</li>
+                    <li class="list-group-item"><b>Argument</b>the path to the folder that contains the project to generate the static site for.</li>
+                    <li class="list-group-item"><b>-o|--output: </b>the path to the output directory (write permissions needed).</li>
                     <li class="list-group-item">
-                        <b>--assembly: </b>the relative path to the assembly to use for the project. Defaults to /bin/Debug/net6.0/{projectName}.dll.
-                        <br /> If given, the value must be a relative path to the project directory and point to the compiled .dll.
+                        <b>-a|--assembly: </b>the path to the assembly to use for the project. Defaults to the Release or Debug build of the 
+                        target framework of the project, if found. <br /> If given, the value must point to the compiled .dll.
                     </li>
                     <li class="list-group-item"><b>--base-controller: </b>the name of the base controller to use for the project.</li>
                     <li class="list-group-item"><b>--route-template: </b> the default route template to use for the project.</li>
@@ -115,8 +115,7 @@
                     to <a href="https://www.netlify.com" target="_blank">Netlify <i class="bi-box-arrow-up-right"></i></a>:
                 </p>
                 <div class="bg-black px-2 text-white fit-width">
-                    ssg --project ${GITHUB_WORKSPACE}/src/TerevintoSoftware.StaticSiteGenerator.Demo --output ${GITHUB_WORKSPACE}/out <br />
-                    --route-casing KebabCase --use-localization true --assembly bin/Release/net6.0/TerevintoSoftware.StaticSiteGenerator.Demo.dll
+                    ssg generate ./src/TerevintoSoftware.StaticSiteGenerator.Demo -o /out --route-casing KebabCase --use-localization true
                 </div>
             </div>
         </div>

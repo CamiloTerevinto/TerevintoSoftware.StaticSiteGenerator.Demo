@@ -12,14 +12,14 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 8.0.x
     - name: Install the ssg tool
       run: dotnet tool install terevintosoftware.staticsitegenerator.tool --global
     - name: Build
       run: dotnet build ./src -c Release
 
     - name: Run the ssg tool
-      run: ssg --project ${GITHUB_WORKSPACE}/src/TerevintoSoftware.StaticSiteGenerator.Demo --output ${GITHUB_WORKSPACE}/out --route-casing KebabCase --use-localization true --assembly bin/Release/net6.0/TerevintoSoftware.StaticSiteGenerator.Demo.dll
+      run: ssg generate ./src/TerevintoSoftware.StaticSiteGenerator.Demo -o ./out --route-casing KebabCase --use-localization true
 
     - name: Use Node.js 16.x
       uses: actions/setup-node@v3
